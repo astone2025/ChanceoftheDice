@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     case 6: rotateX += 90;  rotateY += 0;   break;
                 }
                 
-                cube.style.transform = `translateZ(-40px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+                cube.style.transform = `translateZ(-42.5px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
             });
 
             // Wait for animation (1.5s in CSS)
