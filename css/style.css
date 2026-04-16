@@ -178,13 +178,41 @@ nav {
     box-shadow: inset 1px 1px 2px rgba(0,0,0,0.4); /* Gives pips a "drilled" look */
 }
 
-/* Face transformations unchanged */
+/* Face transformations */
 .face-1 { transform: rotateY(0deg) translateZ(42.5px); }
 .face-2 { transform: rotateY(180deg) translateZ(42.5px); }
 .face-3 { transform: rotateY(90deg) translateZ(42.5px); }
 .face-4 { transform: rotateY(-90deg) translateZ(42.5px); }
 .face-5 { transform: rotateX(90deg) translateZ(42.5px); }
 .face-6 { transform: rotateX(-90deg) translateZ(42.5px); }
+
+/* Standard Pip placements */
+.face-1 .pip:nth-child(1) { grid-area: 2 / 2; }
+
+.face-2 .pip:nth-child(1) { grid-area: 1 / 1; }
+.face-2 .pip:nth-child(2) { grid-area: 3 / 3; }
+
+.face-3 .pip:nth-child(1) { grid-area: 1 / 1; }
+.face-3 .pip:nth-child(2) { grid-area: 2 / 2; }
+.face-3 .pip:nth-child(3) { grid-area: 3 / 3; }
+
+.face-4 .pip:nth-child(1) { grid-area: 1 / 1; }
+.face-4 .pip:nth-child(2) { grid-area: 1 / 3; }
+.face-4 .pip:nth-child(3) { grid-area: 3 / 1; }
+.face-4 .pip:nth-child(4) { grid-area: 3 / 3; }
+
+.face-5 .pip:nth-child(1) { grid-area: 1 / 1; }
+.face-5 .pip:nth-child(2) { grid-area: 1 / 3; }
+.face-5 .pip:nth-child(3) { grid-area: 2 / 2; }
+.face-5 .pip:nth-child(4) { grid-area: 3 / 1; }
+.face-5 .pip:nth-child(5) { grid-area: 3 / 3; }
+
+.face-6 .pip:nth-child(1) { grid-area: 1 / 1; }
+.face-6 .pip:nth-child(2) { grid-area: 2 / 1; }
+.face-6 .pip:nth-child(3) { grid-area: 3 / 1; }
+.face-6 .pip:nth-child(4) { grid-area: 1 / 3; }
+.face-6 .pip:nth-child(5) { grid-area: 2 / 3; }
+.face-6 .pip:nth-child(6) { grid-area: 3 / 3; }
 
 /* Buttons */
 .roll-button {
