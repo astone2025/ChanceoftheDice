@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Poem - The Chaunce of the Dyse</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tei.css">
+    <script src="js/nav.js" defer></script>
+    <script src="js/CETEI.js"></script>
+</head>
+<body>
+    <header>
+        <h1>The Chaunce of the Dyse</h1>
+        <nav>
+            <button class="menu-button" aria-expanded="false" aria-label="Navigation Menu">Menu ☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="poem.html">The Poem</a></li>
+                <li><a href="context.html">Manuscript Context</a></li>
+                <li><a href="glossary.html">Glossary</a></li>
+                <li><a href="bibliography.html">Bibliography</a></li>
+                <li><a href="development.html">Project Development</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div id="status-message" style="display: none; padding: 1rem; margin-bottom: 2rem; background: #fff3cd; border: 1px solid #ffeeba; color: #856404; border-radius: 4px; text-align: center; font-style: italic;">
+            Note: Only the first three stanzas (Rolls 6-6-6, 6-6-5, 6-6-4) have been transcribed so far. 
+            Redirecting to the beginning of the poem.
+        </div>
+        
+        <div id="tei-container">
+            <!-- TEI Content will be loaded here -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Digital Edition by astone2025</p>
+    </footer>
+
+    <script>
+        const c = new CETEI();
+        const behaviors = {
+            "tei": {
+                "lb": ["<br>"],
+            }
+        };
+        c.addBehaviors(behaviors);
+        c.getHTML5('Hammond-Chaunce-tei.xml', function(data) {
+            document.getElementById("tei-container").appendChild(data);
+            // Execute hash handling after content is loaded
+            setTimeout(handleHash, 100);
+        });
+
+        function handleHash() {
+            const hash = window.location.hash;
+            if (hash) {
+                const id = hash.substring(1);
+                // CETEIcean converts xml:id to id on the custom element
+                const target = document.getElementById(id);
+                
+                if (target) {
+                    document.getElementById('status-message').style.display = 'none';
+                    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    target.classList.add('highlight-stanza');
+                } else {
+                    document.getElementById('status-message').style.display = 'block';
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            }
+        }
+
+        window.addEventListener('hashchange', handleHash);
+    </script>
+</body>
+</html>
