@@ -158,20 +158,24 @@ nav {
     position: absolute;
     width: 85px;
     height: 85px;
-    background-color: #fff;
-    border: 1.5px solid #eaeaea;
-    border-radius: 16px;
+    background: radial-gradient(circle at 30% 30%, #ffffff 0%, #f0f0f0 100%);
+    border: 1px solid #dcdcdc;
+    border-radius: 14px;
     display: grid;
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-    padding: 10px;
+    padding: 12px;
     box-sizing: border-box;
-    box-shadow: inset 0 0 15px rgba(0,0,0,0.03), 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.05), 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .pip {
-    background-color: var(--primary-red);
-    width: 13px;
-    height: 13px;
+    background-color: #222; /* Traditional black pips */
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    align-self: center;
+    justify-self: center;
+    box-shadow: inset 1px 1px 2px rgba(0,0,0,0.4); /* Gives pips a "drilled" look */
 }
 
 /* Face transformations unchanged */
