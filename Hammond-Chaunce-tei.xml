@@ -4,7 +4,8 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>The Chaunce of the Dyse: Incipit</title>
+      	<title xml:id="main_title">The Chaunce of the Dyse</title>
+      	<title type="sub" xml:id="sub_title">Incipit</title>
         <author>Unknown</author>
         <editor>Hammond, Eleanor Prescott</editor>
       </titleStmt>
